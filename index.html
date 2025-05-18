@@ -8,15 +8,10 @@
 
   <!-- Google Fonts: Great Vibes for calligraphy + a clean sans for body -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?
-    family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
 
   <style>
-    /* smooth scroll */
-    html {
-      scroll-behavior: smooth;
-    }
-
     /* Reset & base */
     * {
       margin: 0;
@@ -29,9 +24,14 @@
       color: #333;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     section {
       width: 100%;
       text-align: center;
+      position: relative;
     }
 
     h1,
@@ -46,18 +46,33 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
     }
 
     .hero h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 5rem;
+      font-size: 6rem;
       color: #fff;
       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+      position: relative;
+      z-index: 1;
     }
 
     /* 2) Coming soon + countdown */
     .coming-soon {
-      background: #f5f5f5;
+      background: #004d00;
+      color: #fff;
       padding: 4rem 1rem;
     }
 
@@ -89,11 +104,13 @@
       flex-wrap: wrap;
       align-items: center;
       gap: 2rem;
+      justify-content: center;
     }
 
     .about img {
       width: 250px;
-      border-radius: 50%;
+      height: 250px;
+      object-fit: cover;
     }
 
     .about .text {
@@ -122,7 +139,7 @@
       text-decoration: none;
     }
 
-    /* floating “Back to Top” */
+    /* Floating “Back to Top” */
     .scroll-top {
       position: fixed;
       top: 1rem;
@@ -132,6 +149,7 @@
       font-weight: bold;
       z-index: 1000;
       cursor: pointer;
+    }
   </style>
 </head>
 
@@ -151,35 +169,31 @@
   </section>
 
   <!-- 3) ABOUT / BIO -->
-  <section id="about" class="about">
+  <section id="marina_meier" class="about">
     <div class="container">
       <img src="assets/images/me.jpg" alt="Marina Meier">
       <div class="text">
         <h2>About Me</h2>
-        <p>
-          Marina Meier is the author of <em>Then I Choose a Horrible End</em>, …
-          <!-- your bio copy here -->
-        </p>
+        <p>Marina Meier</p>
       </div>
     </div>
   </section>
 
   <!-- 4) FOOTER -->
-  <footer id="footer">
+  <footer id="contact">
     <div class="footer-container">
-      <div>© 2025 Marina Meier</div>
+      <div id="footer-year"></div>
       <div>
         <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a>
-        <a href="mailto:you@yourdomain.com">Contact</a>
+        <a href="mailto:mail.svitlopress@gmail.com">Contact</a>
       </div>
     </div>
   </footer>
 
-  <!-- Countdown script -->
+  <!-- Scripts -->
   <script>
-    // ← Set your launch date here (YYYY, M-1, D)
+    // Countdown
     const launchDate = new Date(2025, 9, 15, 0, 0, 0);
-
     function updateCountdown() {
       const now = new Date();
       const diff = launchDate - now;
@@ -188,12 +202,10 @@
         clearInterval(timerInterval);
         return;
       }
-
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor(diff / (1000 * 60 * 60) % 24);
       const minutes = Math.floor(diff / (1000 * 60) % 60);
       const seconds = Math.floor(diff / 1000 % 60);
-
       document.getElementById('countdown').innerHTML = `
         <div class="countdown-box"><strong>${days}</strong><br>Days</div>
         <div class="countdown-box"><strong>${hours}</strong><br>Hours</div>
@@ -201,11 +213,12 @@
         <div class="countdown-box"><strong>${seconds}</strong><br>Sec</div>
       `;
     }
-
     updateCountdown();
     const timerInterval = setInterval(updateCountdown, 1000);
-  </script>
 
+    // Dynamic Year in Footer
+    document.getElementById('footer-year').innerHTML = `© ${new Date().getFullYear()} Marina Meier`;
+  </script>
 </body>
 
 </html>
