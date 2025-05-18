@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,33 +9,50 @@
   <!-- Google Fonts: Great Vibes for calligraphy + a clean sans for body -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?
-    family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap"
-    rel="stylesheet">
+    family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
     /* smooth scroll */
-    html { scroll-behavior: smooth; }
-    
-    /* Reset & base */
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Open Sans', sans-serif; color: #333; }
+    html {
+      scroll-behavior: smooth;
+    }
 
-    section { width:100%; text-align:center; }
-    h1, h2 { margin-bottom: .5em; }
+    /* Reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: #333;
+    }
+
+    section {
+      width: 100%;
+      text-align: center;
+    }
+
+    h1,
+    h2 {
+      margin-bottom: .5em;
+    }
 
     /* 1) Hero with background image + calligraphy title */
     .hero {
-      background: url('path/to/your-hero-bg.jpg') center/cover no-repeat;
+      background: url('assets/images/hero-bg.jpg') center/cover no-repeat;
       height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
     }
+
     .hero h1 {
       font-family: 'Great Vibes', cursive;
       font-size: 5rem;
       color: #fff;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
     }
 
     /* 2) Coming soon + countdown */
@@ -42,9 +60,11 @@
       background: #f5f5f5;
       padding: 4rem 1rem;
     }
+
     .coming-soon h2 {
       font-size: 3rem;
     }
+
     #countdown {
       display: flex;
       justify-content: center;
@@ -52,6 +72,7 @@
       font-size: 2rem;
       margin-top: 1rem;
     }
+
     .countdown-box {
       min-width: 70px;
     }
@@ -60,6 +81,7 @@
     .about {
       padding: 4rem 1rem;
     }
+
     .about .container {
       max-width: 900px;
       margin: 0 auto;
@@ -68,10 +90,12 @@
       align-items: center;
       gap: 2rem;
     }
+
     .about img {
       width: 250px;
       border-radius: 50%;
     }
+
     .about .text {
       flex: 1;
       text-align: left;
@@ -83,6 +107,7 @@
       color: #fff;
       padding: 1rem 1rem;
     }
+
     footer .footer-container {
       max-width: 900px;
       margin: 0 auto;
@@ -90,6 +115,7 @@
       justify-content: space-between;
       align-items: center;
     }
+
     footer a {
       color: #fff;
       margin: 0 0.5rem;
@@ -108,11 +134,11 @@
       cursor: pointer;
   </style>
 </head>
-  
+
 <body>
   <!-- Floating “Back to Top” -->
   <a href="#hero" class="scroll-top">↑ Top</a>
-  
+
   <!-- 1) HERO -->
   <section id="hero" class="hero">
     <h1>Svitlo Press</h1>
@@ -127,7 +153,7 @@
   <!-- 3) ABOUT / BIO -->
   <section id="about" class="about">
     <div class="container">
-      <img src="path/to/your-photo.jpg" alt="Your Name">
+      <img src="assets/images/me.jpg" alt="Marina Meier">
       <div class="text">
         <h2>About Me</h2>
         <p>
@@ -163,9 +189,9 @@
         return;
       }
 
-      const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours   = Math.floor(diff / (1000*60*60) % 24);
-      const minutes = Math.floor(diff / (1000*60) % 60);
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(diff / (1000 * 60 * 60) % 24);
+      const minutes = Math.floor(diff / (1000 * 60) % 60);
       const seconds = Math.floor(diff / 1000 % 60);
 
       document.getElementById('countdown').innerHTML = `
@@ -176,9 +202,10 @@
       `;
     }
 
-    updateCountdown();  
+    updateCountdown();
     const timerInterval = setInterval(updateCountdown, 1000);
   </script>
 
 </body>
+
 </html>
