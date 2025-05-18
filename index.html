@@ -2,17 +2,183 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My One-Page Site</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Svitlo Press</title>
+
+  <!-- Google Fonts: Great Vibes for calligraphy + a clean sans for body -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?
+    family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* smooth scroll */
+    html { scroll-behavior: smooth; }
+    
+    /* Reset & base */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Open Sans', sans-serif; color: #333; }
+
+    section { width:100%; text-align:center; }
+    h1, h2 { margin-bottom: .5em; }
+
+    /* 1) Hero with background image + calligraphy title */
+    .hero {
+      background: url('path/to/your-hero-bg.jpg') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 5rem;
+      color: #fff;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    }
+
+    /* 2) Coming soon + countdown */
+    .coming-soon {
+      background: #f5f5f5;
+      padding: 4rem 1rem;
+    }
+    .coming-soon h2 {
+      font-size: 3rem;
+    }
+    #countdown {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      font-size: 2rem;
+      margin-top: 1rem;
+    }
+    .countdown-box {
+      min-width: 70px;
+    }
+
+    /* 3) Bio section */
+    .about {
+      padding: 4rem 1rem;
+    }
+    .about .container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+    .about img {
+      width: 250px;
+      border-radius: 50%;
+    }
+    .about .text {
+      flex: 1;
+      text-align: left;
+    }
+
+    /* 4) Footer */
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 1rem 1rem;
+    }
+    footer .footer-container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer a {
+      color: #fff;
+      margin: 0 0.5rem;
+      text-decoration: none;
+    }
+
+    /* floating “Back to Top” */
+    .scroll-top {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      z-index: 1000;
+      cursor: pointer;
+  </style>
 </head>
+  
 <body>
-  <header><h1>Welcome to My Site</h1></header>
-  <section id="about">
-    <p>Here’s some static content about me or my project.</p>
+  <!-- Floating “Back to Top” -->
+  <a href="#hero" class="scroll-top">↑ Top</a>
+  
+  <!-- 1) HERO -->
+  <section id="hero" class="hero">
+    <h1>Svitlo Press</h1>
   </section>
-  <footer>
-    <p>&copy; 2025 Your Name</p>
+
+  <!-- 2) COMING SOON -->
+  <section id="coming-soon" class="coming-soon">
+    <h2>Coming soon</h2>
+    <div id="countdown"></div>
+  </section>
+
+  <!-- 3) ABOUT / BIO -->
+  <section id="about" class="about">
+    <div class="container">
+      <img src="path/to/your-photo.jpg" alt="Your Name">
+      <div class="text">
+        <h2>About Me</h2>
+        <p>
+          Marina Meier is the author of <em>Then I Choose a Horrible End</em>, …
+          <!-- your bio copy here -->
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4) FOOTER -->
+  <footer id="footer">
+    <div class="footer-container">
+      <div>© 2025 Marina Meier</div>
+      <div>
+        <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a>
+        <a href="mailto:you@yourdomain.com">Contact</a>
+      </div>
+    </div>
   </footer>
+
+  <!-- Countdown script -->
+  <script>
+    // ← Set your launch date here (YYYY, M-1, D)
+    const launchDate = new Date(2025, 9, 15, 0, 0, 0);
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = launchDate - now;
+      if (diff < 0) {
+        document.getElementById('countdown').innerText = 'We’re Live!';
+        clearInterval(timerInterval);
+        return;
+      }
+
+      const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours   = Math.floor(diff / (1000*60*60) % 24);
+      const minutes = Math.floor(diff / (1000*60) % 60);
+      const seconds = Math.floor(diff / 1000 % 60);
+
+      document.getElementById('countdown').innerHTML = `
+        <div class="countdown-box"><strong>${days}</strong><br>Days</div>
+        <div class="countdown-box"><strong>${hours}</strong><br>Hours</div>
+        <div class="countdown-box"><strong>${minutes}</strong><br>Min</div>
+        <div class="countdown-box"><strong>${seconds}</strong><br>Sec</div>
+      `;
+    }
+
+    updateCountdown();  
+    const timerInterval = setInterval(updateCountdown, 1000);
+  </script>
+
 </body>
 </html>
