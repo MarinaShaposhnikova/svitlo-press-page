@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Svitlo Press</title>
 
-  <!-- Google Fonts: Great Vibes for calligraphy + a clean sans for body -->
+  <!-- Google Fonts: Modern fonts for thriller book site -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap"
     rel="stylesheet">
 
   <style>
@@ -20,8 +20,9 @@
     }
 
     body {
-      font-family: 'Open Sans', sans-serif;
-      color: #333;
+      font-family: 'Montserrat', sans-serif;
+      color: #fff;
+      background-color: #0a1622;
     }
 
     html {
@@ -39,90 +40,549 @@
       margin-bottom: .5em;
     }
 
-    /* 1) Hero with background image + calligraphy title */
+    /* 1) Hero section */
     .hero {
-      background: url('assets/images/hero-bg.jpg') center/cover no-repeat;
-      height: 100vh;
+      height: 60vh;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/dark-city-bg.jpg?v=1');
+      background-size: cover;
+      background-position: top center;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+    
+    /* Logo styling and animation */
+    .logo-container {
+      margin-top: 2rem;
+    }
+    
+    .floating-logo {
+      max-width: 150px;
+      width: 100%;
+      height: auto;
+      animation: float 3s ease-in-out infinite;
+      object-fit: contain;
+    }
+    
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    /* Hero content positioning */
+    .hero h1, .hero p, .hero .logo-container {
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Particles animation */
+    .particles-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 150%;
+      overflow: hidden;
+      z-index: 1;
+    }
+    
+    .particle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      animation: float-particle 7.5s infinite linear;
+    }
+    
+    .particle:nth-child(1) { top: 20%; left: 10%; animation-duration: 10s; animation-delay: 0s; }
+    .particle:nth-child(2) { top: 70%; left: 20%; animation-duration: 12.5s; animation-delay: 0.5s; }
+    .particle:nth-child(3) { top: 40%; left: 30%; animation-duration: 9s; animation-delay: 1s; }
+    .particle:nth-child(4) { top: 60%; left: 40%; animation-duration: 11s; animation-delay: 1.5s; }
+    .particle:nth-child(5) { top: 30%; left: 50%; animation-duration: 12s; animation-delay: 2s; }
+    .particle:nth-child(6) { top: 80%; left: 60%; animation-duration: 9.5s; animation-delay: 2.5s; }
+    .particle:nth-child(7) { top: 50%; left: 70%; animation-duration: 10.5s; animation-delay: 3s; }
+    .particle:nth-child(8) { top: 10%; left: 80%; animation-duration: 11.5s; animation-delay: 3.5s; }
+    .particle:nth-child(9) { top: 90%; left: 90%; animation-duration: 8.5s; animation-delay: 4s; }
+    .particle:nth-child(10) { top: 25%; left: 15%; animation-duration: 13s; animation-delay: 4.5s; }
+    .particle:nth-child(11) { top: 75%; left: 25%; animation-duration: 8s; animation-delay: 5s; }
+    .particle:nth-child(12) { top: 45%; left: 35%; animation-duration: 13.5s; animation-delay: 5.5s; }
+    .particle:nth-child(13) { top: 65%; left: 45%; animation-duration: 7.5s; animation-delay: 6s; }
+    .particle:nth-child(14) { top: 35%; left: 55%; animation-duration: 14s; animation-delay: 6.5s; }
+    .particle:nth-child(15) { top: 85%; left: 65%; animation-duration: 7s; animation-delay: 7s; }
+    .particle:nth-child(16) { top: 15%; left: 75%; animation-duration: 9.5s; animation-delay: 0.2s; }
+    .particle:nth-child(17) { top: 55%; left: 85%; animation-duration: 11.5s; animation-delay: 0.7s; }
+    .particle:nth-child(18) { top: 95%; left: 5%; animation-duration: 8.5s; animation-delay: 1.2s; }
+    .particle:nth-child(19) { top: 5%; left: 95%; animation-duration: 10.5s; animation-delay: 1.7s; }
+    .particle:nth-child(20) { top: 45%; left: 25%; animation-duration: 12.5s; animation-delay: 2.2s; }
+    .particle:nth-child(21) { top: 65%; left: 35%; animation-duration: 7.5s; animation-delay: 2.7s; }
+    .particle:nth-child(22) { top: 85%; left: 45%; animation-duration: 9.5s; animation-delay: 3.2s; }
+    .particle:nth-child(23) { top: 25%; left: 55%; animation-duration: 11.5s; animation-delay: 3.7s; }
+    .particle:nth-child(24) { top: 45%; left: 65%; animation-duration: 8.5s; animation-delay: 4.2s; }
+    .particle:nth-child(25) { top: 65%; left: 75%; animation-duration: 10.5s; animation-delay: 4.7s; }
+    .particle:nth-child(26) { top: 85%; left: 85%; animation-duration: 12.5s; animation-delay: 5.2s; }
+    .particle:nth-child(27) { top: 15%; left: 95%; animation-duration: 7.5s; animation-delay: 5.7s; }
+    .particle:nth-child(28) { top: 35%; left: 5%; animation-duration: 9.5s; animation-delay: 6.2s; }
+    .particle:nth-child(29) { top: 55%; left: 15%; animation-duration: 11.5s; animation-delay: 6.7s; }
+    .particle:nth-child(30) { top: 75%; left: 25%; animation-duration: 8.5s; animation-delay: 7.2s; }
+    
+    @keyframes float-particle {
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100px) translateX(100px);
+        opacity: 0;
+      }
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 9.5rem; /* Slightly decreased from 11rem */
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+      position: relative;
+      z-index: 1;
+      transition: font-size 0.3s ease;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+      .hero h1 {
+        font-size: 8rem; /* Adjusted from 9rem */
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 6.5rem; /* Adjusted from 7rem */
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 4.5rem; /* Adjusted from 5rem */
+      }
+      
+      .floating-logo {
+        max-width: 120px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero h1 {
+        font-size: 3.5rem;
+      }
+      
+      .floating-logo {
+        max-width: 100px;
+      }
+      
+      .hero p {
+        font-size: 1.2rem;
+        margin-top: 1.5rem;
+      }
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+      margin-top: 2rem;
+    }
+
+    /* 2) Coming soon section */
+    .coming-soon {
+      background-color: #0c1a1f;
+      color: white;
+      height: 50vh;
       display: flex;
       align-items: center;
       justify-content: center;
+      text-align: center;
       position: relative;
+      overflow: hidden;
     }
-
-    .hero::before {
+    
+    /* Eerie fog effect */
+    .coming-soon::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 0;
-    }
-
-    .hero h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 6rem;
-      color: #fff;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-      position: relative;
+      background: linear-gradient(rgba(10, 22, 34, 0), rgba(10, 22, 34, 0.3), rgba(10, 22, 34, 0));
+      animation: fog-move 20s infinite alternate;
+      pointer-events: none;
       z-index: 1;
     }
+    
+    @keyframes fog-move {
+      0% {
+        transform: translateY(-50%) translateX(-10%);
+        opacity: 0.3;
+      }
+      50% {
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(50%) translateX(10%);
+        opacity: 0.3;
+      }
+    }
 
-    /* 2) Coming soon + countdown */
-    .coming-soon {
-      background: #004d00;
-      color: #fff;
-      padding: 4rem 1rem;
+    .coming-soon-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      position: relative;
+      z-index: 2;
+    }
+    
+    @media (min-width: 992px) {
+      .coming-soon-content {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+      }
+    }
+
+    .coming-soon-text {
+      text-align: center;
+      padding: 0;
+      order: 1;
+    }
+    
+    .book-cover {
+      order: 2;
+    }
+    
+    @media (min-width: 992px) {
+      .coming-soon-text {
+        order: initial;
+      }
+      .book-cover {
+        order: initial;
+      }
     }
 
     .coming-soon h2 {
-      font-size: 3rem;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
     }
 
-    #countdown {
+    .coming-soon .release-date {
+      font-size: 5rem;
+      color: #e62e2e;
+      font-weight: bold;
+      margin: 0;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(230, 46, 46, 0.5);
+      animation: text-flicker 4s infinite alternate;
+      white-space: nowrap; /* Prevent text from wrapping */
+      transition: font-size 0.3s ease;
+    }
+    
+    @media (max-width: 1200px) {
+      .coming-soon .release-date {
+        font-size: 4.5rem;
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .coming-soon .release-date {
+        font-size: 4rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .coming-soon .release-date {
+        font-size: 3.5rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .coming-soon .release-date {
+        font-size: 3rem;
+      }
+    }
+    
+    @media (max-width: 400px) {
+      .coming-soon .release-date {
+        font-size: 2.5rem;
+      }
+    }
+    
+    @keyframes text-flicker {
+      0% {
+        opacity: 0.95;
+        text-shadow: 0 0 10px rgba(230, 46, 46, 0.5);
+      }
+      20% {
+        opacity: 0.98;
+        text-shadow: 0 0 15px rgba(230, 46, 46, 0.7);
+      }
+      40% {
+        opacity: 0.95;
+        text-shadow: 0 0 12px rgba(230, 46, 46, 0.6);
+      }
+      60% {
+        opacity: 0.97;
+        text-shadow: 0 0 18px rgba(230, 46, 46, 0.8);
+      }
+      80% {
+        opacity: 0.96;
+        text-shadow: 0 0 14px rgba(230, 46, 46, 0.7);
+      }
+      100% {
+        opacity: 0.95;
+        text-shadow: 0 0 10px rgba(230, 46, 46, 0.5);
+      }
+    }
+
+    .coming-soon .book-title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .book-cover {
+      flex: 0 0 auto;
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      font-size: 2rem;
-      margin-top: 1rem;
+      align-items: center;
+      position: relative;
+      background: none;
+      overflow: visible;
+    }
+    
+    .book-image {
+      max-width: 100%;
+      height: auto;
+      max-height: 420px; /* Slightly increased max-height */
+      box-shadow: none;
+      animation: flicker 8s linear infinite;
+      position: relative;
+      margin-top: 0; /* Reset any default margins */
+      object-position: center top; /* Align to top of container */
+    }
+    
+    @keyframes float-book {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+    
+    @keyframes flicker {
+      0%, 100% {
+        filter: brightness(1);
+      }
+      5% {
+        filter: brightness(1.1);
+      }
+      10% {
+        filter: brightness(0.9);
+      }
+      15% {
+        filter: brightness(1.05);
+      }
+      20% {
+        filter: brightness(1);
+      }
+      55% {
+        filter: brightness(1);
+      }
+      60% {
+        filter: brightness(0.98);
+      }
+      65% {
+        filter: brightness(1.02);
+      }
+      70% {
+        filter: brightness(1);
+      }
     }
 
-    .countdown-box {
-      min-width: 70px;
+    /* 3D Book styling */
+    .book-3d {
+      position: relative;
+      width: 220px;
+      height: 320px;
+      margin: 0 auto;
+      transform-style: preserve-3d;
+      transform: rotateY(-30deg);
+      perspective: 1500px;
+    }
+    
+    .book-spine {
+      position: absolute;
+      width: 40px;
+      height: 320px;
+      left: -20px;
+      top: 0;
+      background: linear-gradient(to right, #071018, #0f2133);
+      transform: rotateY(90deg) translateX(-20px);
+      transform-origin: right;
+      box-shadow: inset -5px 0 10px rgba(0, 0, 0, 0.5);
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+      border-right: 1px solid rgba(0, 0, 0, 0.8);
+    }
+    
+    .book-front {
+      position: absolute;
+      width: 220px;
+      height: 320px;
+      background: linear-gradient(135deg, #0f2133 0%, #071018 100%);
+      box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.7);
+      border-radius: 2px 5px 5px 2px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transform-origin: left;
+    }
+    
+    .book-pages {
+      position: absolute;
+      width: 210px;
+      height: 310px;
+      top: 5px;
+      right: -5px;
+      background: #f0f0f0;
+      z-index: -1;
+      border-radius: 0 2px 2px 0;
+      transform-style: preserve-3d;
+      transform: translateZ(-1px);
+      background-image: linear-gradient(to right, #e8e8e8 0%, #f8f8f8 8%, #e8e8e8 15%, #f8f8f8 25%);
+      box-shadow: inset -10px 0 10px rgba(0, 0, 0, 0.1);
     }
 
     /* 3) Bio section */
     .about {
-      padding: 4rem 1rem;
+      min-height: 50vh;
+      background: #0f2133;
+      position: relative;
+      overflow: hidden;
     }
 
     .about .container {
-      max-width: 900px;
+      width: 95%;
+      max-width: 1200px;
+      min-height: 100%;
+      padding: 2rem 5%;
       margin: 0 auto;
+      box-sizing: border-box;
+      position: relative;
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       align-items: center;
-      gap: 2rem;
-      justify-content: center;
     }
 
     .about img {
       width: 250px;
       height: 250px;
+      min-width: 125px;
+      min-height: 125px;
+      max-width: 100%;
+      max-height: 100%;
       object-fit: cover;
+      object-position: center 30%;
+      border-radius: 50%;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      border: 3px solid #e62e2e;
+      margin: 0 auto 2rem;
+      display: block;
+      float: none;
+      aspect-ratio: 1/1; /* Ensures perfect circle */
+    }
+    
+    @media (max-width: 768px) {
+      .about img {
+        width: 50%;
+        height: auto;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .about img {
+        width: 65%;
+      }
     }
 
     .about .text {
-      flex: 1;
-      text-align: left;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    @media (min-width: 992px) {
+      .about .container {
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 2rem 0% 2rem 1%;
+      }
+      
+      .about img {
+        float: left;
+        margin: 1rem 2rem 1rem 0;
+      }
+      
+      .about .text {
+        text-align: justify;
+        margin-left: 0;
+      }
+    }
+
+    .about h2 {
+      color: #fff;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #e62e2e;
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .about p {
+      color: #d9d9d9;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    
+    .about p:last-child {
+      margin-bottom: 0;
     }
 
     /* 4) Footer */
     footer {
-      background: #222;
+      background: #071018;
       color: #fff;
-      padding: 1rem 1rem;
+      padding: 2rem 1rem;
     }
 
     footer .footer-container {
@@ -131,50 +591,112 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+    }
+    
+    #footer-year {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      letter-spacing: 1px;
     }
 
     footer a {
-      color: #fff;
+      color: #e62e2e;
       margin: 0 0.5rem;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
 
-    /* Floating “Back to Top” */
+    footer a:hover {
+      color: #ff5252;
+    }
+
+    /* Floating "Back to Top" */
     .scroll-top {
       position: fixed;
       top: 1rem;
       left: 1rem;
-      color: #fff;
+      color: #e62e2e;
       text-decoration: none;
       font-weight: bold;
+      font-size: 2rem;
       z-index: 1000;
       cursor: pointer;
+      padding: 0.5rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      text-shadow: 0 0 10px rgba(230, 46, 46, 0.5);
+      border-radius: 3px;
     }
   </style>
 </head>
 
 <body>
   <!-- Floating “Back to Top” -->
-  <a href="#hero" class="scroll-top">↑ Top</a>
+  <a href="#hero" class="scroll-top">↑</a>
 
   <!-- 1) HERO -->
   <section id="hero" class="hero">
+    <div class="particles-container">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
     <h1>Svitlo Press</h1>
+    <p>A publishing imprint</p>
+    <div class="logo-container" style="margin-top: 4rem;">
+      <img src="assets/images/logo.png?v=1" alt="Svitlo Press Logo" class="floating-logo">
+    </div>
   </section>
 
-  <!-- 2) COMING SOON -->
+  <!-- 2) COMING SOON with BOOK COVER -->
   <section id="coming-soon" class="coming-soon">
-    <h2>Coming soon</h2>
-    <div id="countdown"></div>
+    <div class="coming-soon-content">
+      <div class="coming-soon-text">
+        <div class="release-date">Coming soon</div>
+      </div>
+      <div class="book-cover">
+        <img src="assets/images/book-placeholder.png" alt="Book Cover" class="book-image">
+      </div>
+    </div>
   </section>
 
   <!-- 3) ABOUT / BIO -->
   <section id="marina_meier" class="about">
     <div class="container">
-      <img src="assets/images/me.jpg" alt="Marina Meier">
+      <img src="assets/images/me.png?v=1" alt="Marina Meier">
       <div class="text">
-        <h2>About Me</h2>
-        <p>Marina Meier</p>
+        <h2>About Author</h2>
+        <p>Marina Meier is the author of <em>Then I Choose a Horrible End</em>, a psychological thriller that dives deep into fear and blurred reality. Originally from Ukraine, Marina now lives abroad and writes across languages and borders.</p>
+        <p>She completed <em>The Magic of Editing</em> and <em>Editorial Magic</em>, two intensive writing and editing programs focused on structure and character development — and later returned as a mentor, offering editorial feedback to writers working in three languages.</p>
+        <p>Marina believes Stephen King is responsible for at least half of her fears — and still considers him one of her greatest inspirations. She writes to understand fear. To show how it shapes our minds, words, and actions. Almost like her protagonist, she lives with it — not as intensely, but closely enough to understand it. She finds it easier to write about than to speak aloud about it. This novel is her way of showing how isolating fear can feel, and how vital support is when it begins to take over.</p>
       </div>
     </div>
   </section>
@@ -192,32 +714,22 @@
 
   <!-- Scripts -->
   <script>
-    // Countdown
-    const launchDate = new Date(2025, 9, 15, 0, 0, 0);
-    function updateCountdown() {
-      const now = new Date();
-      const diff = launchDate - now;
-      if (diff < 0) {
-        document.getElementById('countdown').innerText = 'We’re Live!';
-        clearInterval(timerInterval);
-        return;
-      }
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(diff / (1000 * 60 * 60) % 24);
-      const minutes = Math.floor(diff / (1000 * 60) % 60);
-      const seconds = Math.floor(diff / 1000 % 60);
-      document.getElementById('countdown').innerHTML = `
-        <div class="countdown-box"><strong>${days}</strong><br>Days</div>
-        <div class="countdown-box"><strong>${hours}</strong><br>Hours</div>
-        <div class="countdown-box"><strong>${minutes}</strong><br>Min</div>
-        <div class="countdown-box"><strong>${seconds}</strong><br>Sec</div>
-      `;
-    }
-    updateCountdown();
-    const timerInterval = setInterval(updateCountdown, 1000);
-
     // Dynamic Year in Footer
-    document.getElementById('footer-year').innerHTML = `© ${new Date().getFullYear()} Marina Meier`;
+    document.getElementById('footer-year').innerHTML = `&copy; ${new Date().getFullYear()} Marina Meier`;
+  </script>
+  <script>
+    // Show scroll-to-top button only when scrolled to coming-soon section or further
+    window.addEventListener('scroll', function() {
+      const scrollTopBtn = document.querySelector('.scroll-top');
+      const comingSoonSection = document.getElementById('coming-soon');
+      const comingSoonPosition = comingSoonSection.getBoundingClientRect().top;
+      
+      if (comingSoonPosition <= 0) {
+        scrollTopBtn.style.opacity = '1';
+      } else {
+        scrollTopBtn.style.opacity = '0';
+      }
+    });
   </script>
 </body>
 
