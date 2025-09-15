@@ -5,14 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Svitlo Press</title>
-  
+
   <!-- Favicon with dark/light mode support -->
   <link rel="icon" href="assets/images/favicon_black.ico" type="image/png" media="(prefers-color-scheme: light)">
   <link rel="icon" href="assets/images/favicon.ico" type="image/png" media="(prefers-color-scheme: dark)">
 
   <!-- Google Fonts: Modern fonts for thriller book site -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&family=Bebas+Neue&display=swap"
     rel="stylesheet">
 
   <style>
@@ -58,12 +59,12 @@
       text-align: center;
       padding: 0 20px;
     }
-    
+
     /* Logo styling and animation */
     .logo-container {
       margin-top: 2rem;
     }
-    
+
     .floating-logo {
       max-width: 150px;
       width: 100%;
@@ -71,25 +72,29 @@
       /* animation: float 3s ease-in-out infinite; */
       object-fit: contain;
     }
-    
+
     @keyframes float {
       0% {
         transform: translateY(0px);
       }
+
       50% {
         transform: translateY(-10px);
       }
+
       100% {
         transform: translateY(0px);
       }
     }
 
     /* Hero content positioning */
-    .hero h1, .hero p, .hero .logo-container {
+    .hero h1,
+    .hero p,
+    .hero .logo-container {
       position: relative;
       z-index: 2;
     }
-    
+
     /* Particles animation */
     .particles-container {
       position: absolute;
@@ -100,7 +105,7 @@
       overflow: hidden;
       z-index: 1;
     }
-    
+
     .particle {
       position: absolute;
       width: 5px;
@@ -109,49 +114,231 @@
       border-radius: 50%;
       animation: float-particle 7.5s infinite linear;
     }
-    
-    .particle:nth-child(1) { top: 20%; left: 10%; animation-duration: 10s; animation-delay: 0s; }
-    .particle:nth-child(2) { top: 70%; left: 20%; animation-duration: 12.5s; animation-delay: 0.5s; }
-    .particle:nth-child(3) { top: 40%; left: 30%; animation-duration: 9s; animation-delay: 1s; }
-    .particle:nth-child(4) { top: 60%; left: 40%; animation-duration: 11s; animation-delay: 1.5s; }
-    .particle:nth-child(5) { top: 30%; left: 50%; animation-duration: 12s; animation-delay: 2s; }
-    .particle:nth-child(6) { top: 80%; left: 60%; animation-duration: 9.5s; animation-delay: 2.5s; }
-    .particle:nth-child(7) { top: 50%; left: 70%; animation-duration: 10.5s; animation-delay: 3s; }
-    .particle:nth-child(8) { top: 10%; left: 80%; animation-duration: 11.5s; animation-delay: 3.5s; }
-    .particle:nth-child(9) { top: 90%; left: 90%; animation-duration: 8.5s; animation-delay: 4s; }
-    .particle:nth-child(10) { top: 25%; left: 15%; animation-duration: 13s; animation-delay: 4.5s; }
-    .particle:nth-child(11) { top: 75%; left: 25%; animation-duration: 8s; animation-delay: 5s; }
-    .particle:nth-child(12) { top: 45%; left: 35%; animation-duration: 13.5s; animation-delay: 5.5s; }
-    .particle:nth-child(13) { top: 65%; left: 45%; animation-duration: 7.5s; animation-delay: 6s; }
-    .particle:nth-child(14) { top: 35%; left: 55%; animation-duration: 14s; animation-delay: 6.5s; }
-    .particle:nth-child(15) { top: 85%; left: 65%; animation-duration: 7s; animation-delay: 7s; }
-    .particle:nth-child(16) { top: 15%; left: 75%; animation-duration: 9.5s; animation-delay: 0.2s; }
-    .particle:nth-child(17) { top: 55%; left: 85%; animation-duration: 11.5s; animation-delay: 0.7s; }
-    .particle:nth-child(18) { top: 95%; left: 5%; animation-duration: 8.5s; animation-delay: 1.2s; }
-    .particle:nth-child(19) { top: 5%; left: 95%; animation-duration: 10.5s; animation-delay: 1.7s; }
-    .particle:nth-child(20) { top: 45%; left: 25%; animation-duration: 12.5s; animation-delay: 2.2s; }
-    .particle:nth-child(21) { top: 65%; left: 35%; animation-duration: 7.5s; animation-delay: 2.7s; }
-    .particle:nth-child(22) { top: 85%; left: 45%; animation-duration: 9.5s; animation-delay: 3.2s; }
-    .particle:nth-child(23) { top: 25%; left: 55%; animation-duration: 11.5s; animation-delay: 3.7s; }
-    .particle:nth-child(24) { top: 45%; left: 65%; animation-duration: 8.5s; animation-delay: 4.2s; }
-    .particle:nth-child(25) { top: 65%; left: 75%; animation-duration: 10.5s; animation-delay: 4.7s; }
-    .particle:nth-child(26) { top: 85%; left: 85%; animation-duration: 12.5s; animation-delay: 5.2s; }
-    .particle:nth-child(27) { top: 15%; left: 95%; animation-duration: 7.5s; animation-delay: 5.7s; }
-    .particle:nth-child(28) { top: 35%; left: 5%; animation-duration: 9.5s; animation-delay: 6.2s; }
-    .particle:nth-child(29) { top: 55%; left: 15%; animation-duration: 11.5s; animation-delay: 6.7s; }
-    .particle:nth-child(30) { top: 75%; left: 25%; animation-duration: 8.5s; animation-delay: 7.2s; }
-    
+
+    .particle:nth-child(1) {
+      top: 20%;
+      left: 10%;
+      animation-duration: 10s;
+      animation-delay: 0s;
+    }
+
+    .particle:nth-child(2) {
+      top: 70%;
+      left: 20%;
+      animation-duration: 12.5s;
+      animation-delay: 0.5s;
+    }
+
+    .particle:nth-child(3) {
+      top: 40%;
+      left: 30%;
+      animation-duration: 9s;
+      animation-delay: 1s;
+    }
+
+    .particle:nth-child(4) {
+      top: 60%;
+      left: 40%;
+      animation-duration: 11s;
+      animation-delay: 1.5s;
+    }
+
+    .particle:nth-child(5) {
+      top: 30%;
+      left: 50%;
+      animation-duration: 12s;
+      animation-delay: 2s;
+    }
+
+    .particle:nth-child(6) {
+      top: 80%;
+      left: 60%;
+      animation-duration: 9.5s;
+      animation-delay: 2.5s;
+    }
+
+    .particle:nth-child(7) {
+      top: 50%;
+      left: 70%;
+      animation-duration: 10.5s;
+      animation-delay: 3s;
+    }
+
+    .particle:nth-child(8) {
+      top: 10%;
+      left: 80%;
+      animation-duration: 11.5s;
+      animation-delay: 3.5s;
+    }
+
+    .particle:nth-child(9) {
+      top: 90%;
+      left: 90%;
+      animation-duration: 8.5s;
+      animation-delay: 4s;
+    }
+
+    .particle:nth-child(10) {
+      top: 25%;
+      left: 15%;
+      animation-duration: 13s;
+      animation-delay: 4.5s;
+    }
+
+    .particle:nth-child(11) {
+      top: 75%;
+      left: 25%;
+      animation-duration: 8s;
+      animation-delay: 5s;
+    }
+
+    .particle:nth-child(12) {
+      top: 45%;
+      left: 35%;
+      animation-duration: 13.5s;
+      animation-delay: 5.5s;
+    }
+
+    .particle:nth-child(13) {
+      top: 65%;
+      left: 45%;
+      animation-duration: 7.5s;
+      animation-delay: 6s;
+    }
+
+    .particle:nth-child(14) {
+      top: 35%;
+      left: 55%;
+      animation-duration: 14s;
+      animation-delay: 6.5s;
+    }
+
+    .particle:nth-child(15) {
+      top: 85%;
+      left: 65%;
+      animation-duration: 7s;
+      animation-delay: 7s;
+    }
+
+    .particle:nth-child(16) {
+      top: 15%;
+      left: 75%;
+      animation-duration: 9.5s;
+      animation-delay: 0.2s;
+    }
+
+    .particle:nth-child(17) {
+      top: 55%;
+      left: 85%;
+      animation-duration: 11.5s;
+      animation-delay: 0.7s;
+    }
+
+    .particle:nth-child(18) {
+      top: 95%;
+      left: 5%;
+      animation-duration: 8.5s;
+      animation-delay: 1.2s;
+    }
+
+    .particle:nth-child(19) {
+      top: 5%;
+      left: 95%;
+      animation-duration: 10.5s;
+      animation-delay: 1.7s;
+    }
+
+    .particle:nth-child(20) {
+      top: 45%;
+      left: 25%;
+      animation-duration: 12.5s;
+      animation-delay: 2.2s;
+    }
+
+    .particle:nth-child(21) {
+      top: 65%;
+      left: 35%;
+      animation-duration: 7.5s;
+      animation-delay: 2.7s;
+    }
+
+    .particle:nth-child(22) {
+      top: 85%;
+      left: 45%;
+      animation-duration: 9.5s;
+      animation-delay: 3.2s;
+    }
+
+    .particle:nth-child(23) {
+      top: 25%;
+      left: 55%;
+      animation-duration: 11.5s;
+      animation-delay: 3.7s;
+    }
+
+    .particle:nth-child(24) {
+      top: 45%;
+      left: 65%;
+      animation-duration: 8.5s;
+      animation-delay: 4.2s;
+    }
+
+    .particle:nth-child(25) {
+      top: 65%;
+      left: 75%;
+      animation-duration: 10.5s;
+      animation-delay: 4.7s;
+    }
+
+    .particle:nth-child(26) {
+      top: 85%;
+      left: 85%;
+      animation-duration: 12.5s;
+      animation-delay: 5.2s;
+    }
+
+    .particle:nth-child(27) {
+      top: 15%;
+      left: 95%;
+      animation-duration: 7.5s;
+      animation-delay: 5.7s;
+    }
+
+    .particle:nth-child(28) {
+      top: 35%;
+      left: 5%;
+      animation-duration: 9.5s;
+      animation-delay: 6.2s;
+    }
+
+    .particle:nth-child(29) {
+      top: 55%;
+      left: 15%;
+      animation-duration: 11.5s;
+      animation-delay: 6.7s;
+    }
+
+    .particle:nth-child(30) {
+      top: 75%;
+      left: 25%;
+      animation-duration: 8.5s;
+      animation-delay: 7.2s;
+    }
+
     @keyframes float-particle {
       0% {
         transform: translateY(0) translateX(0);
         opacity: 0;
       }
+
       10% {
         opacity: 1;
       }
+
       90% {
         opacity: 1;
       }
+
       100% {
         transform: translateY(-100px) translateX(100px);
         opacity: 0;
@@ -160,46 +347,50 @@
 
     .hero h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 9.5rem; /* Slightly decreased from 11rem */
+      font-size: 9.5rem;
+      /* Slightly decreased from 11rem */
       margin-bottom: 0.5rem;
       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
       position: relative;
       z-index: 1;
       transition: font-size 0.3s ease;
     }
-    
+
     /* Responsive adjustments */
     @media (max-width: 1200px) {
       .hero h1 {
-        font-size: 8rem; /* Adjusted from 9rem */
+        font-size: 8rem;
+        /* Adjusted from 9rem */
       }
     }
-    
+
     @media (max-width: 992px) {
       .hero h1 {
-        font-size: 6.5rem; /* Adjusted from 7rem */
+        font-size: 6.5rem;
+        /* Adjusted from 7rem */
       }
     }
-    
+
     @media (max-width: 768px) {
       .hero h1 {
-        font-size: 4.5rem; /* Adjusted from 5rem */
+        font-size: 4.5rem;
+        /* Adjusted from 5rem */
       }
-      
+
       .floating-logo {
         max-width: 120px;
       }
     }
-    
+
     @media (max-width: 576px) {
       .hero h1 {
         font-size: 3.5rem;
       }
-      
+
       .floating-logo {
         max-width: 100px;
       }
-      
+
       .hero p {
         font-size: 1.2rem;
         margin-top: 1.5rem;
@@ -213,25 +404,27 @@
       z-index: 1;
       margin-top: 2rem;
     }
-    
+
     @keyframes fog-move {
       0% {
         transform: translateY(-50%) translateX(-10%);
         opacity: 0.3;
       }
+
       50% {
         opacity: 0.7;
       }
+
       100% {
         transform: translateY(50%) translateX(10%);
         opacity: 0.3;
       }
     }
-    
+
     .book-cover {
       order: 2;
     }
-    
+
     @media (min-width: 992px) {
       .book-cover {
         order: initial;
@@ -246,61 +439,67 @@
       text-transform: uppercase;
       text-shadow: 0 0 10px rgba(230, 46, 46, 0.5);
       animation: text-flicker 4s infinite alternate;
-      white-space: nowrap; /* Prevent text from wrapping */
+      white-space: nowrap;
+      /* Prevent text from wrapping */
       transition: font-size 0.3s ease;
     }
-    
+
     @media (max-width: 1200px) {
       .release-date {
         font-size: 4.5rem;
       }
     }
-    
+
     @media (max-width: 992px) {
       .release-date {
         font-size: 4rem;
       }
     }
-    
+
     @media (max-width: 768px) {
       .release-date {
         font-size: 3.5rem;
       }
     }
-    
+
     @media (max-width: 576px) {
       .release-date {
         font-size: 3rem;
       }
     }
-    
+
     @media (max-width: 400px) {
       .release-date {
         font-size: 2.5rem;
       }
     }
-    
+
     @keyframes text-flicker {
       0% {
         opacity: 0.95;
         text-shadow: 0 0 10px rgba(230, 46, 46, 0.5);
       }
+
       20% {
         opacity: 0.98;
         text-shadow: 0 0 15px rgba(230, 46, 46, 0.7);
       }
+
       40% {
         opacity: 0.95;
         text-shadow: 0 0 12px rgba(230, 46, 46, 0.6);
       }
+
       60% {
         opacity: 0.97;
         text-shadow: 0 0 18px rgba(230, 46, 46, 0.8);
       }
+
       80% {
         opacity: 0.96;
         text-shadow: 0 0 14px rgba(230, 46, 46, 0.7);
       }
+
       100% {
         opacity: 0.95;
         text-shadow: 0 0 10px rgba(230, 46, 46, 0.5);
@@ -321,52 +520,68 @@
       background: none;
       overflow: visible;
     }
-    
+
     .book-image {
       max-width: 100%;
       height: auto;
-      max-height: 420px; /* Slightly increased max-height */
+      max-height: 420px;
+      /* Slightly increased max-height */
       box-shadow: none;
       animation: flicker 8s linear infinite;
       position: relative;
-      margin-top: 0; /* Reset any default margins */
-      object-position: center top; /* Align to top of container */
+      margin-top: 0;
+      /* Reset any default margins */
+      object-position: center top;
+      /* Align to top of container */
     }
-    
+
     @keyframes float-book {
-      0%, 100% {
+
+      0%,
+      100% {
         transform: translateY(0);
       }
+
       50% {
         transform: translateY(-15px);
       }
     }
-    
+
     @keyframes flicker {
-      0%, 100% {
+
+      0%,
+      100% {
         filter: brightness(1);
       }
+
       5% {
         filter: brightness(1.1);
       }
+
       10% {
         filter: brightness(0.9);
       }
+
       15% {
         filter: brightness(1.05);
       }
+
       20% {
         filter: brightness(1);
       }
+
       55% {
         filter: brightness(1);
       }
+
       60% {
         filter: brightness(0.98);
       }
+
       65% {
         filter: brightness(1.02);
       }
+
       70% {
         filter: brightness(1);
       }
@@ -382,7 +597,7 @@
       transform: rotateY(-30deg);
       perspective: 1500px;
     }
-    
+
     .book-spine {
       position: absolute;
       width: 40px;
@@ -396,7 +611,7 @@
       border-left: 1px solid rgba(255, 255, 255, 0.1);
       border-right: 1px solid rgba(0, 0, 0, 0.8);
     }
-    
+
     .book-front {
       position: absolute;
       width: 220px;
@@ -408,7 +623,7 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
       transform-origin: left;
     }
-    
+
     .book-pages {
       position: absolute;
       width: 210px;
@@ -460,16 +675,17 @@
       margin: 0 auto 2rem;
       display: block;
       float: none;
-      aspect-ratio: 1/1; /* Ensures perfect circle */
+      aspect-ratio: 1/1;
+      /* Ensures perfect circle */
     }
-    
+
     @media (max-width: 768px) {
       .author-image-container img {
         width: 50%;
         height: auto;
       }
     }
-    
+
     @media (max-width: 480px) {
       .author-image-container img {
         width: 65%;
@@ -481,19 +697,19 @@
       max-width: 800px;
       margin: 0 auto;
     }
-    
+
     @media (min-width: 992px) {
       .about .container {
         flex-direction: row;
         align-items: flex-start;
         padding: 2rem 0% 2rem 1%;
       }
-      
+
       .author-image-container img {
         float: left;
         margin: 1rem 2rem 1rem 0;
       }
-      
+
       .about .text {
         text-align: justify;
         margin-left: 0;
@@ -515,7 +731,7 @@
       font-size: 1.1rem;
       line-height: 1.8;
     }
-    
+
     .about p:last-child {
       margin-bottom: 0;
     }
@@ -535,7 +751,7 @@
       align-items: center;
       flex-wrap: wrap;
     }
-    
+
     #footer-year {
       font-family: 'Playfair Display', serif;
       font-weight: 400;
@@ -570,7 +786,7 @@
       text-shadow: 0 0 10px rgba(230, 46, 46, 0.5);
       border-radius: 3px;
     }
-    
+
     .section-header {
       display: flex;
       align-items: center;
@@ -578,23 +794,23 @@
       gap: 1rem;
       margin-bottom: 1rem;
     }
-    
+
     .section-header h2 {
       margin: 0;
       display: inline-block;
     }
-    
+
     .social-icon {
       display: inline-flex;
       padding: 8px;
       border-radius: 50%;
       transition: all 0.3s ease;
     }
-    
+
     .social-icon:hover {
       transform: translateY(-3px) scale(1.1);
     }
-    
+
     .social-icon svg {
       width: 22px;
       height: 22px;
@@ -614,7 +830,7 @@
       object-fit: contain !important;
       display: block !important;
     }
-    
+
     .threads-icon img {
       width: 21px !important;
       height: 21px !important;
@@ -625,7 +841,7 @@
       object-fit: contain !important;
       display: block !important;
     }
-    
+
     /* Extra Safari-specific fix */
     @media screen and (-webkit-min-device-pixel-ratio:0) {
       .social-icon img {
@@ -634,11 +850,54 @@
         max-width: 22px !important;
         max-height: 22px !important;
       }
+
       .threads-icon img {
         width: 21px !important;
         height: 21px !important;
         max-width: 21px !important;
         max-height: 21px !important;
+      }
+    }
+
+    .preorder-title {
+      color: #E30E12;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      font-family: sans-serif;
+      transition: transform 0.25s cubic-bezier(.4, 2, .6, 1);
+      display: inline-block;
+      text-align: justify;
+    }
+
+    .preorder-button {
+    background-color: #E30E12;
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.25s cubic-bezier(.4, 2, .6, 1);
+    margin-bottom: 1.5rem;
+  }
+
+  .preorder-button:hover {
+    transform: translateY(-3px) scale(1.1);
+  }
+
+    .book-info {
+      text-align: justify;
+    }
+
+    /* Book section responsive layout */
+    @media (min-width: 992px) {
+      #then_i_choose_a_horrible_end > div {
+        flex-direction: row !important;
+      }
+
+      #then_i_choose_a_horrible_end > div > div:first-child {
+        width: auto !important;
       }
     }
   </style>
@@ -681,6 +940,16 @@
       <div class="particle"></div>
       <div class="particle"></div>
       <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
     </div>
     <h1>Svitlo Press</h1>
     <p>A publishing imprint</p>
@@ -689,10 +958,38 @@
     </div>
   </section>
 
-  <!-- 2) COMING SOON with BOOK COVER -->
-  <section id="coming_soon" class="coming_soon" style="position: relative; width: 100%; overflow: hidden;">
-    <img src="assets/images/city_bg.jpg" style="width:100%; display:block; max-width:100vw; height:auto;">
-    <img src="assets/images/book.png" style="position: absolute; top: 58%; left: 50%; transform: translate(-50%, -50%); max-width: 80%; height: auto; display: block; z-index: 2;">
+  <!-- 2) BOOK -->
+  <section id="then_i_choose_a_horrible_end" class="then_i_choose_a_horrible_end"
+    style="position: relative; width: 100%; overflow: hidden; display: flex; min-height: 100vh; background: #0f2133;">
+    <img src="assets/images/city_bg.jpg"
+      style="position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0.5;">
+    <div
+      style="display: flex; width: 100%; position: relative; z-index: 3; padding: 2rem; gap: 2rem; align-items: center; justify-content: center; flex-direction: column;">
+      <div style="flex: 1; display: flex; justify-content: center;">
+        <img src="assets/images/book.png" style="width: 200%; object-fit: contain;">
+      </div>
+      <div
+        class="book-info"
+        style="flex: 1; width: 100%; max-width: 800px; background: rgba(22, 59, 78, 0.6); padding: 2rem; border-radius: 10px; box-shadow: 0 8px 32px rgba(0,0,0,0.25);">
+        
+        <h2 class="preorder-title">Coming October 14, 2025</h2>
+        <div></div>
+        <button class="preorder-button">Preorder Now</button>
+        
+        <p style="color: #fff; line-height: 1.6; white-space: pre-line; font-size: 1.1rem;"><b>She's always been afraid. But what if this time...she's right to be?</b>
+
+          On the surface, Alicia Brooks is a successful professional in Chicago, balancing a demanding job and life with her long-term boyfriend, Jack. But deep inside, she has spent years battling her fears - constant, intrusive anxieties that turn even the smallest thoughts into potential threats. A suspicious office worker, a stranger's gaze, the secrets hiding inside an overgrown bush - everything feeds into her unease.
+
+          One night, while home alone, a masked figure appears in her house, knife in hand. Alicia escapes - barely - but at what cost?
+
+          The Silent Walker, as she names him, begins to haunt her waking hours. Is he a serial killer? A stranger with a vendetta? Or something far more unsettling?
+
+          Alicia must make a choice: endless horror...or a horrible end?
+
+          <b>A taut psychological thriller that walks the edge between paranoia and truth, Then I Choose a Horrible End is a chilling descent into the mind of someone who sees danger everywhere - and might finally be right.</b>
+        </p>
+      </div>
+    </div>
   </section>
 
   <!-- 3) ABOUT / BIO -->
@@ -705,22 +1002,36 @@
         <div class="section-header">
           <h2>About Author</h2>
           <div style="display: flex; gap: 10px;">
-            <a href="https://www.threads.net/@marina_meier" target="_blank" rel="noopener noreferrer" aria-label="Threads" class="social-icon threads-icon" style="padding: 4px; border-radius: 50%; display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px;">
+            <a href="https://www.threads.net/@marina_meier" target="_blank" rel="noopener noreferrer"
+              aria-label="Threads" class="social-icon threads-icon"
+              style="padding: 4px; border-radius: 50%; display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px;">
               <img src="assets/images/icon_threads.svg" class="social">
             </a>
 
-            <a href="https://t.me/chapter_zero_marina" target="_blank" rel="noopener noreferrer" aria-label="Telegram" class="social-icon telegram-icon" style="padding: 4px; border-radius: 50%; display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px;">
+            <a href="https://t.me/chapter_zero_marina" target="_blank" rel="noopener noreferrer" aria-label="Telegram"
+              class="social-icon telegram-icon"
+              style="padding: 4px; border-radius: 50%; display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px;">
               <img src="assets/images/icon_telegram.svg" class="social">
             </a>
 
-            <a href="https://www.instagram.com/marina_meier" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon instagram-icon" style="padding: 4px; border-radius: 50%; display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px;">
+            <a href="https://www.instagram.com/marina_meier" target="_blank" rel="noopener noreferrer"
+              aria-label="Instagram" class="social-icon instagram-icon"
+              style="padding: 4px; border-radius: 50%; display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px;">
               <img src="assets/images/icon_instagram.svg" class="social">
             </a>
           </div>
         </div>
-        <p>Marina Meier is the author of <i>Then I Choose a Horrible End</i>, a psychological thriller that dives deep into fear and blurred reality. A story where nothing feels safe — not even for the author. Originally from Ukraine, Marina now lives abroad and writes across languages and borders.</p>
-        <p>She completed <em>The Magic of Editing</em> and <em>Editorial Magic</em>, two intensive writing and editing programs focused on structure and character development — and later returned as a mentor, offering editorial feedback to writers working in three languages.</p>
-        <p>Marina believes Stephen King is responsible for at least half of her fears — and still considers him one of her greatest inspirations. She writes to understand fear. To show how it shapes our minds, words, and actions. Almost like her protagonist, she lives with it — not as intensely, but closely enough to understand it. She finds it easier to write about than to speak aloud about it. This novel is her way of showing how isolating fear can feel, and how vital support is when it begins to take over.</p>
+        <p>Marina Meier is the author of <i>Then I Choose a Horrible End</i>, a psychological thriller that dives deep
+          into fear and blurred reality. A story where nothing feels safe — not even for the author. Originally from
+          Ukraine, Marina now lives abroad and writes across languages and borders.</p>
+        <p>She completed <em>The Magic of Editing</em> and <em>Editorial Magic</em>, two intensive writing and editing
+          programs focused on structure and character development — and later returned as a mentor, offering editorial
+          feedback to writers working in three languages.</p>
+        <p>Marina believes Stephen King is responsible for at least half of her fears — and still considers him one of
+          her greatest inspirations. She writes to understand fear. To show how it shapes our minds, words, and actions.
+          Almost like her protagonist, she lives with it — not as intensely, but closely enough to understand it. She
+          finds it easier to write about than to speak aloud about it. This novel is her way of showing how isolating
+          fear can feel, and how vital support is when it begins to take over.</p>
       </div>
     </div>
   </section>
@@ -744,12 +1055,12 @@
     document.getElementById('footer-year').innerHTML = `&copy; ${new Date().getFullYear()} Svitlo Press`;
   </script>
   <script>
-    // Show scroll-to-top button only when scrolled to coming_soon section or further
-    window.addEventListener('scroll', function() {
+    // Show scroll-to-top button only when scrolled to book section or further
+    window.addEventListener('scroll', function () {
       const scrollTopBtn = document.querySelector('.scroll-top');
-      const comingSoonSection = document.getElementById('coming_soon');
+      const comingSoonSection = document.getElementById('then_i_choose_a_horrible_end');
       const comingSoonPosition = comingSoonSection.getBoundingClientRect().top;
-      
+
       if (comingSoonPosition <= 0) {
         scrollTopBtn.style.opacity = '1';
       } else {
@@ -758,12 +1069,16 @@
     });
 
     // Smooth scroll to top without adding to URL
-    document.querySelector('.scroll-top').addEventListener('click', function(e) {
+    document.querySelector('.scroll-top').addEventListener('click', function (e) {
       e.preventDefault();
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
+    });
+
+    document.querySelector('.preorder-button').addEventListener('click', function () {
+      window.open('https://books2read.com/then-i-choose-a-horrible-end', '_blank');
     });
   </script>
 </body>
